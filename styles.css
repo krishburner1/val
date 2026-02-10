@@ -1,0 +1,106 @@
+body {
+    font-family: cursive;
+    background-color: rgb(245, 193, 210);
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2 {
+    color: #ff2f6e;
+    text-align: center;
+}
+
+.options {
+    position: relative;
+    height: 120px;
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 26px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+
+    transition:
+        left 0.25s ease,
+        top 0.25s ease,
+        transform 0.2s ease;
+}
+
+#yes {
+    background-color: #ff2f6e;
+    color: white;
+    left: 70px;
+    top: 40px;
+    z-index: 2;
+}
+
+#no {
+    background-color: #333;
+    color:white;
+    left: 350px;
+    top:40px;
+    transform: scale(0.95s);
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    background: white;
+    width: 500px;
+    height: 400px;
+    padding: 1px 20px 60px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+#celebration{
+    margin-top: 30px;
+    animation: pop 0.6s ease;
+}
+
+@keyframes pop{
+    from {
+        transform: scale(0.7);
+        opacity:0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    animation: fall 1.4s linear forwards;
+}
+
+@keyframes fall{
+    from{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to{
+        transform: translateY(200px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#yes:hover{
+    transform: scale(1.5);
+
+}
