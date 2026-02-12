@@ -1,16 +1,35 @@
 body {
     font-family: 'Poppins', cursive;
-    background: linear-gradient(135deg, #ff9ecb, #ffd6e7, #ffc2d1);
-    background-size: 300% 300%;
-    animation: gradientMove 10s ease infinite;
-    overflow: hidden;
     margin: 0;
     height: 100vh;
+    overflow: hidden;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    position : relative;
+
+    background: linear-gradient(
+        -45deg,
+        #ff9ecb,
+        #ffc2d1,
+        #ff8fab,
+        #ffd6e7
+    );
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        circle at 30% 40%,
+        rgba(255, 255, 255, 0.4),
+        transparent 60%
+    );
+    animation: glowMove 12s ease-in-out infinite alternate;
+    pointer-events: none;
 }
 
 
@@ -157,4 +176,37 @@ button {
     }
 }
 
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glowMove {
+    from {
+        transform: translate(-5%, -5%);
+    }
+    to {
+        transform: translate(5%, 5%);
+    }
+}
+
+.background-blob {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.3);
+    filter: blur(120px);
+    border-radius: 50%;
+    animation: blobMove 20s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+@keyframes blobMove {
+    from {
+        transform: translate(-100px, -50px);
+    }
+    to {
+        transform: translate(100px, 50px);
+    }
+}
 
