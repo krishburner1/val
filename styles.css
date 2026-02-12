@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position : relative;
 }
 
 
@@ -155,4 +156,5 @@ button {
         opacity: 0;
     }
 }
+
 
