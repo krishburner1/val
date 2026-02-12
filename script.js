@@ -58,12 +58,17 @@ function moveNoButton() {
 setInterval(() => {
     const heart = document.createElement("div");
     heart.innerText = "💖";
-    heart.style.position = "absolute";
+    heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.bottom = "-20px";
     heart.style.fontSize = Math.random() * 20 + 15 + "px";
     heart.style.animation = "floatUp 4s linear forwards";
+    heart.style.pointerEvents = "none";
+    heart.style.zIndex = "0";
+
     document.body.appendChild(heart);
 
     setTimeout(() => heart.remove(), 4000);
 }, 800);
+
+
